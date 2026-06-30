@@ -669,9 +669,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb24f0e1b7a84584981daadcd97ac21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  turnSpeed: 0.005
+  moveSpeed: 0
+  desiredMoveSpeed: 50
+  turnSpeed: 30
   turnAmount: 0
+  playerInput: {x: 0, y: 0, z: 0}
+  playerTurn: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   playerHeight: 2
   Ground:
@@ -712,7 +715,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073224909}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4ac0edfffd18bab4b819cb2f278af739, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

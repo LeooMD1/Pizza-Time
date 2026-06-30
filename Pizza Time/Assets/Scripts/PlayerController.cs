@@ -1,4 +1,3 @@
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,8 +6,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("--------Variables--------")]
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float desiredMoveSpeed;
+    
     [SerializeField] private float turnSpeed;
     [SerializeField] private float turnAmount;
+    
+    [SerializeField] private Vector3 playerInput;
+    [SerializeField] private Vector3 playerTurn;
 
     [Header("--------References--------")]
     [SerializeField] private Rigidbody rb;
@@ -20,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
+    {      
         inputActions = new();
         inputActions.Enable();
         inputActions.Player.Enable();
@@ -31,6 +35,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerInput = inputActions.Player.Move.ReadValue<Vector3>();
+        playerTurn = inputActions.Player.Turn.ReadValue<Vector3>();
+        
+
         // ground check and stuff
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
 
@@ -39,32 +47,37 @@ public class PlayerController : MonoBehaviour
         else 
             rb.linearDamping = 0;
         
-        MovePlayer();
 
+    }
+
+    private void FixedUpdate()
+    {
+        MovePlayer(); 
     }
 
     private void MovePlayer()
     {
         
-        Vector3 playerInput = inputActions.Player.Move.ReadValue<Vector3>();
-        Vector3 playerTurn = inputActions.Player.Turn.ReadValue<Vector3>();
-        
-        
         print(inputActions.Player.Move.ReadValue<Vector3>());
 
-        rb.AddForce(playerInput * moveSpeed, ForceMode.Force);
+        rb.AddForce(transform.rotation * playerInput * moveSpeed, ForceMode.Force);
 
-        if (playerInput.z > 0.1f)
-            Mathf.Lerp(0, moveSpeed, 0.005f);
 
         print(playerTurn);
 
         turnAmount += playerTurn.x;
 
-        transform.rotation = quaternion.EulerXYZ(0, turnAmount * turnSpeed, 0);
+        //transform.rotation = Quaternion.Euler(0, turnAmount * turnSpeed * Time.deltaTime, 0);
+        transform.Rotate(new Vector3(0, playerTurn.x * turnSpeed * Time.deltaTime, 0));
 
-
-
+        if (playerInput.z > 0.1f)
+            moveSpeed = Mathf.Lerp(moveSpeed, desiredMoveSpeed, 0.005f);
+        
+        else if (playerInput.z == 0)
+            moveSpeed = 0;
+        
+        else if (playerInput.z < 0)
+            moveSpeed = Mathf.Lerp(moveSpeed, desiredMoveSpeed, 0.005f);
 
     }
 
