@@ -670,7 +670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  turnSpeed: 5
+  turnSpeed: 0.005
+  turnAmount: 0
   rb: {fileID: 0}
   playerHeight: 2
   Ground:

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("--------Variables--------")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float turnSpeed;
+    [SerializeField] private float turnAmount;
 
     [Header("--------References--------")]
     [SerializeField] private Rigidbody rb;
@@ -52,14 +53,19 @@ public class PlayerController : MonoBehaviour
         print(inputActions.Player.Move.ReadValue<Vector3>());
 
         rb.AddForce(playerInput * moveSpeed, ForceMode.Force);
-        
+
+        if (playerInput.z > 0.1f)
+            Mathf.Lerp(0, moveSpeed, 0.005f);
 
         print(playerTurn);
 
-        transform.rotation = Quaternion.Euler(0, playerTurn.x * turnSpeed, 0);
+        turnAmount += playerTurn.x;
+
+        transform.rotation = quaternion.EulerXYZ(0, turnAmount * turnSpeed, 0);
 
 
-        
+
+
     }
 
 
