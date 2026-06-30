@@ -71,13 +71,13 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(new Vector3(0, playerTurn.x * turnSpeed * Time.deltaTime, 0));
 
         if (playerInput.z > 0.1f)
-            moveSpeed = Mathf.Lerp(moveSpeed, desiredMoveSpeed, 0.0005f);
+            moveSpeed = Mathf.Lerp(moveSpeed, desiredMoveSpeed, 0.005f);
         
         else if (playerInput.z == 0)
             moveSpeed = 0;
         
         else if (playerInput.z < 0)
-            moveSpeed = Mathf.Lerp(moveSpeed, desiredMoveSpeed, 0.0005f);
+            moveSpeed = Mathf.Lerp(moveSpeed, desiredMoveSpeed, 0.005f);
 
     }
 
