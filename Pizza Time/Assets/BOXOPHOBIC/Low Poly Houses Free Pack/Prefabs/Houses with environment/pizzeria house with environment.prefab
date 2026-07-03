@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 8566383120548604826}
   - component: {fileID: 4705755401331450943}
   - component: {fileID: 7397941748731498741}
-  - component: {fileID: 2291188412554366551}
-  - component: {fileID: 7544831346126026165}
+  - component: {fileID: 5674012063129975275}
   m_Layer: 0
   m_Name: pizzeria house with environment
   m_TagString: Untagged
@@ -94,8 +93,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2291188412554366551
-BoxCollider:
+--- !u!64 &5674012063129975275
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -112,30 +111,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.2163696, y: 5.2144465, z: 4.7680855}
-  m_Center: {x: 1.9787538, y: 2.6072233, z: -1.013149}
---- !u!65 &7544831346126026165
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9055112274125254944}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.5161185, y: 2.7355103, z: 2.7228043}
-  m_Center: {x: -1.7730591, y: 1.3677552, z: -1.0968423}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4430555112022491958, guid: 27d59a71db8c91946877b37ffa1c2f45, type: 3}
 --- !u!1001 &1150226055815107020
 PrefabInstance:
   m_ObjectHideFlags: 0

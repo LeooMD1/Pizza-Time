@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8361403262736338872}
   - component: {fileID: 4874707216193421341}
   - component: {fileID: 7224485371800646871}
-  - component: {fileID: 6046029564463400093}
+  - component: {fileID: 4759783161286333870}
   m_Layer: 0
   m_Name: cute house with environment
   m_TagString: Untagged
@@ -92,8 +92,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6046029564463400093
-BoxCollider:
+--- !u!64 &4759783161286333870
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,9 +110,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 10.6053705, y: 5.7957764, z: 7.0563755}
-  m_Center: {x: 0.020721955, y: 2.8978882, z: 0.10277977}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8630583313584002342, guid: 2bf2e0507b3902d43978787df3b5783f, type: 3}
 --- !u!1001 &1949244040421338398
 PrefabInstance:
   m_ObjectHideFlags: 0

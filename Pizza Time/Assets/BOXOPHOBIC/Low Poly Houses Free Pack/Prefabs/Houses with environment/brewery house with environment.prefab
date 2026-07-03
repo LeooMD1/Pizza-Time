@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 425009169745424583}
   - component: {fileID: 3623766041067962210}
   - component: {fileID: 1562400843891362728}
-  - component: {fileID: 3498146160433312944}
-  - component: {fileID: 9135556489318930952}
+  - component: {fileID: 8081306378107005234}
   m_Layer: 0
   m_Name: brewery house with environment
   m_TagString: Untagged
@@ -93,8 +92,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3498146160433312944
-BoxCollider:
+--- !u!64 &8081306378107005234
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,30 +110,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 8.67774, y: 4.412791, z: 15.113919}
-  m_Center: {x: 4.4827247, y: 2.2063954, z: -0.03476578}
---- !u!65 &9135556489318930952
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057852481192979069}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 12.13, y: 7.08, z: 6.2}
-  m_Center: {x: -2.77, y: 2.6, z: -5.73}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 880805446427783824, guid: f9045ab2be2d7c24cb76c469a2b54dea, type: 3}
 --- !u!1001 &1561727964968263259
 PrefabInstance:
   m_ObjectHideFlags: 0

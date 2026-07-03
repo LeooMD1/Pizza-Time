@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 2002014880370375069}
   - component: {fileID: 3199612339545093688}
   - component: {fileID: 829710379148526322}
-  - component: {fileID: 4275647382376838527}
-  - component: {fileID: 7706721885654938992}
-  - component: {fileID: 165044648863528671}
+  - component: {fileID: 845939555141650774}
   m_Layer: 0
   m_Name: big cottage 1 floor new with environment
   m_TagString: Untagged
@@ -95,8 +93,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4275647382376838527
-BoxCollider:
+--- !u!64 &845939555141650774
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -113,51 +111,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 12.954867, y: 5.0255113, z: 5.141797}
-  m_Center: {x: 0.7975558, y: 2.512754, z: -0.9373872}
---- !u!65 &7706721885654938992
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189870874870014759}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.52, y: 5.789953, z: 1.93}
-  m_Center: {x: -6.28, y: 2.91, z: -0.89}
---- !u!65 &165044648863528671
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189870874870014759}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 6.19, y: 0.63, z: 3.45}
-  m_Center: {x: 0.99, y: 0.31, z: 1.29}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4510279086003855839, guid: 3bcdbe39a6af358408a873f4156da9d0, type: 3}
 --- !u!1001 &679293289204077034
 PrefabInstance:
   m_ObjectHideFlags: 0
