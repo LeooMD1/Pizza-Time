@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float desiredMoveSpeed;
     
+    [SerializeField] private float timeOfDay;
+    
     [SerializeField] private float turnSpeed;
     [SerializeField] private float turnAmount;
     
@@ -16,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("--------References--------")]
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private Material SimpleSky;
 
     [Header("--------Groundcheck--------")]
     [SerializeField] private float playerHeight;
@@ -30,6 +34,10 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Enable();
 
         rb = GetComponent<Rigidbody>();
+
+
+        SimpleSky.mainTextureOffset = new Vector2(0.2f, 0);
+
     }
 
     // Update is called once per frame
@@ -47,7 +55,7 @@ public class PlayerController : MonoBehaviour
         else 
             rb.linearDamping = 0;
 
-        if(grounded && playerInput.z > 0.1f && playerTurn.x > 0.1f && moveSpeed > 26)
+        /*if(grounded && playerInput.z > 0.1f && playerTurn.x > 0.1f && moveSpeed > 26)
             rb.linearDamping = 0;
         
         else if (grounded && playerInput.z < 0.1f && playerTurn.x < 0.1f && moveSpeed > 26)
@@ -63,10 +71,12 @@ public class PlayerController : MonoBehaviour
             rb.linearDamping = 2;
 
         else if (grounded && playerInput.z == 0 && playerTurn.x == 0)
-            rb.linearDamping = 2;
+            rb.linearDamping = 2;*/
 
 
+        timeOfDay += 0.0001f;
 
+        SimpleSky.mainTextureOffset = new Vector2(timeOfDay, 0);
     }
 
     private void FixedUpdate()
@@ -99,6 +109,4 @@ public class PlayerController : MonoBehaviour
             moveSpeed = Mathf.Lerp(moveSpeed, desiredMoveSpeed, 0.005f);
 
     }
-
-
 }
