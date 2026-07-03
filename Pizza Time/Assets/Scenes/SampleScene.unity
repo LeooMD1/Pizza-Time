@@ -10921,9 +10921,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  desiredMoveSpeed: 100
+  desiredMoveSpeed: 65
   timeOfDay: 0
-  turnSpeed: 120
+  turnSpeed: 360
   turnAmount: 0
   playerInput: {x: 0, y: 0, z: 0}
   playerTurn: {x: 0, y: 0, z: 0}

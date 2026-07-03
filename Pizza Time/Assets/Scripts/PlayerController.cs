@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(transform.rotation * playerInput * moveSpeed, ForceMode.Force);
 
-
+        
         print(playerTurn);
 
         turnAmount += playerTurn.x;
