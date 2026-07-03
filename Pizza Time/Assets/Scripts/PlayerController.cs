@@ -46,7 +46,26 @@ public class PlayerController : MonoBehaviour
             rb.linearDamping = 2;
         else 
             rb.linearDamping = 0;
+
+        if(grounded && playerInput.z > 0.1f && playerTurn.x > 0.1f && moveSpeed > 26)
+            rb.linearDamping = 0;
         
+        else if (grounded && playerInput.z < 0.1f && playerTurn.x < 0.1f && moveSpeed > 26)
+            rb.linearDamping = 0;
+
+        else if (grounded && playerInput.z > 0.1f && playerTurn.x < 0.1f && moveSpeed > 26)
+            rb.linearDamping = 0;
+
+        else if (grounded && playerInput.z < 0.1f && playerTurn.x > 0.1f && moveSpeed > 26)
+            rb.linearDamping = 0;
+
+        else if (grounded && playerInput.z > 0.1f && playerTurn.x == 0)
+            rb.linearDamping = 2;
+
+        else if (grounded && playerInput.z == 0 && playerTurn.x == 0)
+            rb.linearDamping = 2;
+
+
 
     }
 
