@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [Header("--------References--------")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Material SimpleSky;
+    [SerializeField] private Npcstuff npc;
 
     [Header("--------Groundcheck--------")]
     [SerializeField] private float playerHeight;
@@ -77,6 +78,11 @@ public class PlayerController : MonoBehaviour
         timeOfDay += 0.0001f;
 
         SimpleSky.mainTextureOffset = new Vector2(timeOfDay, 0);
+
+        foreach (GameObject npcs in npc.ingameNPCs)
+        {
+            
+        }
     }
 
     private void FixedUpdate()
