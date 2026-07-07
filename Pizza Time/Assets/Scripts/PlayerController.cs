@@ -17,10 +17,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 playerInput;
     [SerializeField] private Vector3 playerTurn;
 
+    [SerializeField] private float impactForceThreshold;
+    [SerializeField] private float impactFrameTime;
+
     [Header("--------References--------")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Material SimpleSky;
     [SerializeField] private Npcstuff npc;
+    
+    [SerializeField] private Material impactFrame;
+    
+    [SerializeField] private Shake shake;
 
     [Header("--------Groundcheck--------")]
     [SerializeField] private float playerHeight;
@@ -85,6 +92,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer != Ground && collision.impulse.sqrMagnitude > impactForceThreshold * impactForceThreshold)
+        {
+            StartCoroutine(Impact(impactFrameTime));
+        }
+    }
+
     private void FixedUpdate()
     {
         MovePlayer(); 
@@ -113,6 +128,26 @@ public class PlayerController : MonoBehaviour
         
         else if (playerInput.z < 0)
             moveSpeed = Mathf.Lerp(moveSpeed, desiredMoveSpeed, 0.01f);
+
+    }
+
+
+    private IEnumerator Impact(float timer)
+    {
+        StartCoroutine(shake.Shaking());
+
+        impactFrame.SetInt("_active", 1);
+        yield return new WaitForSeconds(timer);
+        impactFrame.SetInt("_Invert", 1);
+        yield return new WaitForSeconds(timer);
+        impactFrame.SetInt("_Invert", 0);
+        impactFrame.SetInt("_Colour", 1);
+        yield return new WaitForSeconds(timer);
+        impactFrame.SetInt("_active", 0);
+        impactFrame.SetInt("_Invert", 0);
+        impactFrame.SetInt("_Colour", 0);
+
+
 
     }
 }
