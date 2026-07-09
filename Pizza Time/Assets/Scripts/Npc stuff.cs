@@ -19,7 +19,7 @@ public class Npcstuff : MonoBehaviour
 
 
 
-        #endregion
+    #endregion
 
     private void Awake()
     {

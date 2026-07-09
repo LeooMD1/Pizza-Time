@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {      
+        Cursor.lockState = CursorLockMode.Locked;
+        
         inputActions = new();
         inputActions.Enable();
         inputActions.Player.Enable();
@@ -62,25 +64,6 @@ public class PlayerController : MonoBehaviour
             rb.linearDamping = 2;
         else 
             rb.linearDamping = 0;
-
-        /*if(grounded && playerInput.z > 0.1f && playerTurn.x > 0.1f && moveSpeed > 26)
-            rb.linearDamping = 0;
-        
-        else if (grounded && playerInput.z < 0.1f && playerTurn.x < 0.1f && moveSpeed > 26)
-            rb.linearDamping = 0;
-
-        else if (grounded && playerInput.z > 0.1f && playerTurn.x < 0.1f && moveSpeed > 26)
-            rb.linearDamping = 0;
-
-        else if (grounded && playerInput.z < 0.1f && playerTurn.x > 0.1f && moveSpeed > 26)
-            rb.linearDamping = 0;
-
-        else if (grounded && playerInput.z > 0.1f && playerTurn.x == 0)
-            rb.linearDamping = 2;
-
-        else if (grounded && playerInput.z == 0 && playerTurn.x == 0)
-            rb.linearDamping = 2;*/
-
 
         timeOfDay += 0.0001f;
 
