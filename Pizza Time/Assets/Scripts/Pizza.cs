@@ -43,36 +43,20 @@ public class Pizza : MonoBehaviour
     {
         if (collision.gameObject == Player && pizzaTaken == false)
         {
-            StartCoroutine(PizzaHell());   
+            pizzaTaken = true;  
             Instantiate(ps);
             ps.transform.position = gameObject.transform.position;
-            Destroy(PizzaObj);
-            gameObject.GetComponent<BoxCollider>().isTrigger = false;
+            Destroy(gameObject);
+            //gameObject.GetComponent<BoxCollider>().isTrigger = false;
         }
     }
 
-    public IEnumerator PizzaHell()
+    /*public IEnumerator PizzaHell()
     {
         pizzaTaken = true;
-        
-        StartCoroutine(shake.Shaking());
-        StartCoroutine(FadeEvilness());
+    }*/
 
-        pizzaMat.SetInt("_flash", 1);
-        yield return new WaitForSeconds(0.1f);
-
-
-        pizzaMat.SetInt("_flash", 0);
-        pizzaMat.SetInt("_pizzaCollected", 1);
-
-        yield return new WaitForSeconds(3f);
-
-        pizzaMat.SetInt("_pizzaCollected", 0);
-
-        Destroy(gameObject);
-    }
-
-    public IEnumerator FadeEvilness()
+    /*public IEnumerator FadeEvilness()
     {
         pizzaMat.SetFloat("_evilness", 1);
         yield return new WaitForSeconds(1f);
@@ -84,5 +68,5 @@ public class Pizza : MonoBehaviour
             print(evilness);
             yield return null;
         }
-    }
+    }*/
 }

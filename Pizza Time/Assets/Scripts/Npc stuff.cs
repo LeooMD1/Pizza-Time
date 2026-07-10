@@ -63,9 +63,21 @@ public class Npcstuff : MonoBehaviour
         for (int i = 0; i < numberGen.Length; i++)
         {
             var pos = spawnPoints[numberGen[i]];
-            ingameNPCs.Add(Instantiate (npcModels[i], pos.transform.position, Quaternion.identity));
-            
+            ingameNPCs.Add(Instantiate (npcModels[i], pos.transform.position, Quaternion.identity));      
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        foreach (GameObject npcs in ingameNPCs)
+        {
+            if (other.gameObject == Player )
+            {
+                print("pizza deliverlered");
+            }
+
+        }
+        
     }
 
     // Update is called once per frame
