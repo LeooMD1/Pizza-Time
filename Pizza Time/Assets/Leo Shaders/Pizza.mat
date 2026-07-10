@@ -129,9 +129,9 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     - _amount: 0
-    - _evilness: 0.6918668
+    - _evilness: 0
     - _flash: 0
-    - _pizzaCollected: 0
+    - _pizzaCollected: 1
     - _size: 4.99
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

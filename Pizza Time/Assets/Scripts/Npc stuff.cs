@@ -46,7 +46,7 @@ public class Npcstuff : MonoBehaviour
             iterations++;
             if (iterations > 100000)
             {
-                print("were fucked");
+                print("were cooked");
                 break;
             }
         }
@@ -66,20 +66,7 @@ public class Npcstuff : MonoBehaviour
             ingameNPCs.Add(Instantiate (npcModels[i], pos.transform.position, Quaternion.identity));      
         }
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        foreach (GameObject npcs in ingameNPCs)
-        {
-            if (other.gameObject == Player )
-            {
-                print("pizza deliverlered");
-            }
-
-        }
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {

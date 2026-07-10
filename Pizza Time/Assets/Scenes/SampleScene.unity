@@ -13514,8 +13514,10 @@ MonoBehaviour:
   SimpleSky: {fileID: 2100000, guid: e68f77e240a7f8643b5cc4253dc37516, type: 2}
   npc: {fileID: 1616167504}
   impactFrame: {fileID: 2100000, guid: 96971bdc23c649243834fae030bac429, type: 2}
+  angryMat: {fileID: 2100000, guid: d86d7a12f19622a4a926888ddbc939a7, type: 2}
   shake: {fileID: 330585548}
   Sky: {fileID: 1707458578}
+  humanPop: {fileID: 2230348228599858800, guid: ffe7baa2372a4674d92d19d06a1e0779, type: 3}
   playerHeight: 2
   Ground:
     serializedVersion: 2

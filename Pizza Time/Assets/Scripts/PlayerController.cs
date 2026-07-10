@@ -26,10 +26,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Npcstuff npc;
     
     [SerializeField] private Material impactFrame;
-       
+    [SerializeField] private Material angryMat;
+
     [SerializeField] private Shake shake;
     
     [SerializeField] private GameObject Sky;
+    
+    [SerializeField] private ParticleSystem humanPop;
 
     [Header("--------Groundcheck--------")]
     [SerializeField] private float playerHeight;
@@ -82,6 +85,11 @@ public class PlayerController : MonoBehaviour
      
         else 
             Sky.SetActive(true);
+
+        if (Pizza.pizzaTaken)
+            angryMat.SetInt("_active", 1);
+        else
+            angryMat.SetInt("_active", 0);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -89,6 +97,17 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.layer != Ground && collision.impulse.sqrMagnitude > impactForceThreshold * impactForceThreshold)
         {
             StartCoroutine(Impact(impactFrameTime));
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("npc") && Pizza.pizzaTaken)
+        {
+            Instantiate(humanPop, other.gameObject.transform.position, Quaternion.identity);
+            Destroy(other.gameObject);
+            Pizza.pizzaTaken = false;
+            StartCoroutine(shake.Shaking());
         }
     }
 
