@@ -26,8 +26,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Npcstuff npc;
     
     [SerializeField] private Material impactFrame;
-    
+       
     [SerializeField] private Shake shake;
+    
+    [SerializeField] private GameObject Sky;
 
     [Header("--------Groundcheck--------")]
     [SerializeField] private float playerHeight;
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {      
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         
         inputActions = new();
         inputActions.Enable();
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
 
         SimpleSky.mainTextureOffset = new Vector2(0.2f, 0);
+        
 
     }
 
@@ -73,6 +76,12 @@ public class PlayerController : MonoBehaviour
         {
             
         }
+
+        if (Pizza.pizzaTaken)
+            Sky.SetActive(false);
+     
+        else 
+            Sky.SetActive(true);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -129,8 +138,6 @@ public class PlayerController : MonoBehaviour
         impactFrame.SetInt("_active", 0);
         impactFrame.SetInt("_Invert", 0);
         impactFrame.SetInt("_Colour", 0);
-
-
-
     }
+    
 }
